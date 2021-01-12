@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <style>
+            .txt{
+                position: relative;
+                font-family: 'Roboto Condensed', sans-serif;
+                color: #a6a6a6;
+                font-size: 30px;
+                top: 100px;
+            }
+
+            body{
+                background-color: #1a1a1a;
+            }
+        </style>
+        <script>
+            var vary = false;
+            var ch;
+            var gid;
+
+            function stop(id){
+                gid.innerHTML = ch;
+                vary = false;
+            }
+
+            function changeit(){
+                if (vary==true){
+                    var x = gid.innerHTML;
+                    var n = x.charCodeAt(0)+1;
+                    if (n>90) n = 65;
+                    var chr = String.fromCharCode(n);
+                    gid.innerHTML = chr;
+                }
+            }
+
+            function change(id){
+                gid = id;
+                ch = gid.innerHTML;
+                vary = true;
+                setInterval(changeit,20);
+            }
+
+        </script>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css'>
+        <title>Text Animation</title>
+    </head>
+
+    <body>
+        <center>
+            <div class='txt'>
+            <div id='one' onmouseover ="change(this)" onmouseout="stop(this)" style="width:30px;height: 50px;">H</div>
+            <div id='two' onmouseover ="change(this)" onmouseout="stop(this)" style="width:30px;height: 50px;">E</div>
+            <div id='three' onmouseover ="change(this)" onmouseout="stop(this)" style="width:30px;height: 50px;">L</div>
+            <div id='four' onmouseover ="change(this)" onmouseout="stop(this)" style="width:30px;height: 50px;">L</div>
+            <div id='five' onmouseover ="change(this)" onmouseout="stop(this)" style="width:30px;height: 50px;">O</div>
+            <br>
+            <div id='six' onmouseover ="change(this)" onmouseout="stop(this)" style="width:30px;height: 50px;">W</div>
+            <div id='seven' onmouseover ="change(this)" onmouseout="stop(this)" style="width:30px;height: 50px;">O</div>
+            <div id='eight' onmouseover ="change(this)" onmouseout="stop(this)" style="width:30px;height: 50px;">R</div>
+            <div id='nine' onmouseover ="change(this)" onmouseout="stop(this)" style="width:30px;height: 50px;">L</div>
+            <div id='nine' onmouseover ="change(this)" onmouseout="stop(this)" style="width:30px;height: 50px;">D</div>
+            </div>
+        </center>
+
+    </body>
+
+</html>
